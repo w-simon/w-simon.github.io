@@ -2,9 +2,10 @@
 permalink:           pretty
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:               w-simon
+tagline:             'The personal website of w-simon'
+description:         'The personal website of w-simon'
+url:                 https://w-simon.github.io/
 paginate:            1
 baseurl:             ""
 
@@ -24,9 +25,12 @@ author:
 # Custom vars
 version:             2.0.0
 github:
-  repo:              https://github.com/poole/poole
+  repo:              https://github.com/w-simon/w-simon.github.io
 
 # Gems
 gems:
   - jekyll-paginate
   - jekyll-gist
+  
+# This is the list of pages to incldue in the header of the website.
+pages_list:       {'About':'/about','Archive':'/archive','Feed':'/atom.xml'}
