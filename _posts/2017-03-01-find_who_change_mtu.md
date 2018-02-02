@@ -1,26 +1,26 @@
 ---
 layout: post
-title: ¸ú×ÙÄÄ¸ö½ø³ÌÔÚÆµ·±¸ü¸ÄÏµÍ³Ê±¼ä
+title: è·Ÿè¸ªå“ªä¸ªè¿›ç¨‹åœ¨é¢‘ç¹æ›´æ”¹ç³»ç»Ÿæ—¶é—´
 ---
 
-###ÎÊÌâ
+###é—®é¢˜
 
-messageÖĞMar 29 17:35:54 localhost systemd: Time has been changed
-´òÓ¡·Ç³£·Ç³£Æµ·±,ÔõÃ´ÕÒµ½ÊÇÄÄ¸ö½ø³ÌÔÚµ÷ÓÃ£¿
+messageä¸­Mar 29 17:35:54 localhost systemd: Time has been changed
+æ‰“å°éå¸¸éå¸¸é¢‘ç¹,æ€ä¹ˆæ‰¾åˆ°æ˜¯å“ªä¸ªè¿›ç¨‹åœ¨è°ƒç”¨ï¼Ÿ
 
 -----
 
-###·½·¨
+###æ–¹æ³•
 
-* autitctl¼à¿Ø
+* autitctlç›‘æ§
 auditctl -a exit,always -S adjtimex  -b64 -k XXX_adj
 auditctl -a exit,always -S settimeofday  -b64 -k XXX_set
----¡·Ã»ÓĞĞ§¹û¡£
+---ã€‹æ²¡æœ‰æ•ˆæœã€‚
 
 
-¿¼ÂÇµ½ÊÇÏµÍ³µ÷ÓÃÃ»ÓĞ¼à¿ØÈ«£¬Ê¹ÓÃftrace£º
+è€ƒè™‘åˆ°æ˜¯ç³»ç»Ÿè°ƒç”¨æ²¡æœ‰ç›‘æ§å…¨ï¼Œä½¿ç”¨ftraceï¼š
 
-* ftrace¼à¿Ø
+* ftraceç›‘æ§
 cd    /sys/kernel/debug/tracing/events/syscalls
 
 [root@localhost syscalls]# echo 1 > sys_enter_adjtimex/enable
@@ -35,4 +35,4 @@ cd    /sys/kernel/debug/tracing/
  ClockSynTaskEnt-15461 [005] .... 33884.671568: sys_clock_settime(which_clock: 0, tp: 7f12a1a72ae0)
  ClockSynTaskEnt-15461 [005] .... 33904.679034: sys_clock_settime(which_clock: 0, tp: 7f12a1a72ae0)
  
- ---¡·¹Û²ìµ½ÊÇ ClockSynTaskEnt-15461 ½ø³ÌÔÚÆµ·±µ÷ÓÃsys_clock_settime ¸ü¸ÄÊ±¼ä¡£
+ ---ã€‹è§‚å¯Ÿåˆ°æ˜¯ ClockSynTaskEnt-15461 è¿›ç¨‹åœ¨é¢‘ç¹è°ƒç”¨sys_clock_settime æ›´æ”¹æ—¶é—´ã€‚
