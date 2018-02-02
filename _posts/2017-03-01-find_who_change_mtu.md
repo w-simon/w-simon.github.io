@@ -13,6 +13,7 @@ message中Mar 29 17:35:54 localhost systemd: Time has been changed
 ###方法
 
 * autitctl监控
+
 auditctl -a exit,always -S adjtimex  -b64 -k XXX_adj
 auditctl -a exit,always -S settimeofday  -b64 -k XXX_set
 ---》没有效果。
@@ -21,6 +22,7 @@ auditctl -a exit,always -S settimeofday  -b64 -k XXX_set
 考虑到是系统调用没有监控全，使用ftrace：
 
 * ftrace监控
+
 cd    /sys/kernel/debug/tracing/events/syscalls
 
 [root@localhost syscalls]# echo 1 > sys_enter_adjtimex/enable
