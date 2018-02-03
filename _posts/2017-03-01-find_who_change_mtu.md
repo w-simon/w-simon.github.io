@@ -3,14 +3,14 @@ layout: post
 title: 跟踪哪个进程在频繁更改系统时间
 ---
 
-##问题
+## 问题
 
 message中Mar 29 17:35:54 localhost systemd: Time has been changed
 打印非常非常频繁,怎么找到是哪个进程在调用？
 
 -----
 
-##方法
+## 方法
 
 * autitctl监控
 
@@ -36,7 +36,7 @@ cd    /sys/kernel/debug/tracing/events/syscalls
 
 cd    /sys/kernel/debug/tracing/
 
- # watch -n 1 cat trace
+ #watch -n 1 cat trace
  
  ClockSynTaskEnt-15461 [005] .... 33864.664181: sys_clock_settime(which_clock: 0, tp: 7f12a1a72ae0)
  
