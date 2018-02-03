@@ -1,3 +1,8 @@
+---
+layout: post
+title: Ramfs占用过大导致OOM
+---
+
 ## 问题
 
 系统发生OOM，系统日志如下：
