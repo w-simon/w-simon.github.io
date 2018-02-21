@@ -103,7 +103,7 @@ crash> p hstates
 
 hstates = $3 = 
 
- {{
+ ...
     next_nid_to_alloc = 0, 
 	
     next_nid_to_free = 0, 
